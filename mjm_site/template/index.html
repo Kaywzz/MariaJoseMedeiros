@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Site não oficial da Escola EEEP Maria José Medeiros</title>
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkIgvKNyJzO5Y-pCp0b-mNQ47N0wXQPiYeHg&s" type="image/png" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">     
+</head>
+<body>
+<div class="wrap">
+	<header class="top">
+		<div class="brand">
+			<img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkIgvKNyJzO5Y-pCp0b-mNQ47N0wXQPiYeHg&s" alt="Logo" />
+			<div>
+				<h1>Escola Maria José Medeiros</h1>
+				<p>Esse site foi feito para os professores Fábio e Igor avaliarem meu nível técnico, caso você seja um aluno muito obrigado pelo acesso aproveite esse site!</p>
+			</div>
+		</div>
+		<nav class="top-actions">
+			<button class="chip" id="btnCursos">📚 Cursos técnicos</button>
+			<button class="chip" id="btnInfo">ℹ️ Informações Escolares</button>
+			<button class="chip" id="btnSuporte">📞 Suporte escolar</button>
+			<button class="chip" id="btnQualificado">🎓 Qualidade Escolar</button>
+		</nav>
+	</header>
+	<div class="layout">
+		<section class="card">
+			<h2>Cadastro na escola Mária José Medeiros!</h2>
+			<div class="warning" style="background-color: #ffeded; border: 2px solid #f44336; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 1.1em; display: flex; align-items: center;">
+				<span style="font-size: 1.5em; margin-right: 10px;">⚠️</span>
+				<p>
+				<strong style="color: #b71c1c">AVISO</strong> : Coloque as informações <u>verdadeiras</u> apenas nos campos de Nome completo, Deficiência, Alergia, Curso e série. Os outros campos não precisam ser oficias porém ainda sim precisam estar prenchidos, pois o objetivo deste site é apenas para fins acadêmicos, <strong>não para coleta de dados reais</strong>.
+				</p>
+			  </div>
+			<form id="formCadastro">
+				<div>
+					<label>Nome completo *</label>
+					<input type="text" id="nome" placeholder="Ex: Karla Maythê Nascimento Miranda" required 
+				</div>
+				<div class="row">
+					<div class="col">
+						<label>Nascimento *</label>
+						<div class="row">
+							<input type="number" id="dia" placeholder="Dia" min="1" max="31" required />
+							<input type="number" id="mes" placeholder="Mês" min="1" max="12" required />
+							<input type="number" id="ano" placeholder="Ano" min="1900" max="2026" required />
+						</div>
+					</div>
+					<div class="col">
+						<label>CEP *</label>
+						<input type="text" id="cep" maxlength="8" placeholder="Ex: 60877250" required/>
+					</div>
+				</div>
+				<div>
+					<label>Nome do responsável *</label>
+					<input type="text" id="responsavel" placeholder="Ex: Paulo Bento De Andrade" required/>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label>Área *</label>
+						<select id="area">
+							<option value="Redes De Computadores">Redes De Computadores</option>
+							<option value="Administração">Administração</option>
+							<option value="Enfermagem">Enfermagem</option>
+						</select>
+					</div>
+					<div class="col">
+						<label>Série *</label>
+						<select id="serie">
+							<option value="1">1° Série</option>
+							<option value="2">2° Série</option>
+							<option value="3">3° Série</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label>Alergia?</label>
+						<select id="alergia"><option>Não</option><option>Sim</option></select>
+					</div>
+					<div class="col">
+						<label>É PCD?</label>
+						<select id="pcd"><option>Não</option><option>Sim</option></select>
+					</div>
+				</div>
+				<div id="extras"></div>
+				<div id="feedback"></div>
+				<div class="btn-group">
+					<button type="button" class="btn" id="btnCadastrar">✨ Cadastrar aluno</button>
+					<button type="button" class="btn btn-alt" id="btnVerAlunos">👀 Lista de alunos cadastrados</button>
+					<button type="button" class="btn btn-alt" id="btnQuiz">📝 Quiz de qualificação</button>
+					<button type="button" class="btn btn-alt" id="btnTestarConexao" style="background:#475569">🔗 Tester conexão com banco de dados</button>
+				</div>
+			</form>
+			<div id="quizSecao" class="quiz-section"></div>
+			<div id="resultado" class="resultado-section"></div>
+		</section>
+	</div>
+	<footer>Esse site foi feito por Kayllan Álex de Redes 2 ©<br>Não roube dados nem ideias desse site !<br>Caso encontre algum erro mande menssagem para (85) 98418-2190 📱</footer>
+</div>
+<div class="modal" id="modalInfo">
+	<div class="box">
+		<button class="close">&times;</button>
+		<h2>ℹ️ Informações Escolares</h2>
+		<div id="infoConteudo">
+			<div class="info-panel inst">
+				<h3>🏫 Instituição</h3>
+				<p>EEEP Maria José Medeiros</p>
+			</div>
+			<div class="info-panel loc">
+				<h3>📍 Localização</h3>
+				<p>Rua Desembargador Lauro Nogueira, 1240<br>Papicu, Fortaleza-CE</p>
+			</div>
+			<div class="info-panel hours">
+				<h3>🕒 Funcionamento</h3>
+				<p>Ensino Médio Integrado<br>Horário Integral (Diurno)</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal" id="modalSuporte">
+	<div class="box">
+		<button class="close">&times;</button>
+		<h2>📞 Suporte e Contato</h2>
+		<div id="suporteConteudo">
+			<div class="info-panel contat">
+				<h3>💬 WhatsApp</h3>
+				<p>(85) 93101-3155</p>
+				<small>Atendimento em horário comercial</small>
+			</div>
+			<div class="info-panel email">
+				<h3>📧 E-mail Oficial</h3>
+				<p>mmedeiros@escola.ce.gov.br</p>
+			</div>
+			<div class="info-panel instagram">
+				<h3>🐦 Instagram</h3>
+				<p>@eeepmariajosemedeiros</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal" id="modalCursos">
+	<div class="box">
+		<button class="close">&times;</button>
+		<h2>🎓 Nossos Cursos</h2>
+		<div id="cursosConteudo">
+			<div class="info-panel redes">
+				<h3>🌐 Redes de Computadores</h3>
+				<p>Infraestrutura de Redes, Protocolo de Redes, Sistemas Operacionais, Servidores, Lógica de Programação e Cabeamento Estruturado.</p>
+
+			</div>
+			<div class="info-panel enfermagem">
+				<h3>🩺 Enfermagem</h3>
+				<p>Cuidado humanizado, Primeiros Socorros, Anatomia e Administração de Medicamentos.</p>
+			</div>
+			<div class="info-panel administracao">
+				<h3>💼 Administração</h3>
+				<p>Empreendedorismo, Gestão Financeira, Logística e Recursos Humanos.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal" id="modalQualificados">
+	<div class="box">
+		<button class="close">&times;</button>
+		<h2>🏆 Alunos de Qualificados</h2>
+		<div id="qualificadosConteudo">
+			<p style="text-align:center; color:#64748b;">Carregando dados...</p>
+		</div>
+	</div>
+</div>                       
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
