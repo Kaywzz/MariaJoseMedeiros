@@ -128,8 +128,8 @@ $('#btnVerAlunos').onclick = async () => {
 
 $('#btnQuiz').onclick = async () => {
 	let nomeAluno = prompt("Digite seu nome como está escrito no seu cadastro:");
-	let areaInput = prompt("Digite a área (Redes De Computadores, Administração ou Enfermagem):");
-	let serieNum = prompt("Digite a Série (ex: 1° Série):");
+	let areaInput = prompt("Digite seu curso (Redes, Adm, Enf) (Redes de computadores, Administraçao, Enfermagem):");
+	let serieNum = prompt("Digite a Série (ex: 1, 2, 3):");
 
 	if (!nomeAluno || !areaInput || !serieNum) return;
 
