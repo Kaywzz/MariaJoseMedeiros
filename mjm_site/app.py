@@ -1,3 +1,5 @@
+from replit.object_storage import Client
+client = Client()
 from flask import Flask, request, jsonify, render_template
 import requests, random, os
 from datetime import datetime

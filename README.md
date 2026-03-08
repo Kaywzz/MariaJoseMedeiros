@@ -48,11 +48,11 @@ https://maria-jose-medeiros--kaywzz.replit.app/
 
 📸 Documentação / Imagens
 
-<p align="center">
-  <img src="TelaInicial.png" width="200"/>
-  <img src="Cadastro.png" width="200"/>
-  <img src="Cursos.png" width="200"/>
-  <img src="Quiz.png" width="200"/>
+<p align="center" >
+  <img src="inicio.png" width="200" style="border-radius:10px; padding: 6px"/>
+  <img src="cadastro.png" width="200" style="border-radius:10px; padding: 6px"/>
+  <img src="cursos.png" width="200" style="border-radius:10px; padding: 6px"/>
+  <img src="quiz.png" width="200" style="border-radius:10px; padding: 6px"/>
 </p>
 🎯 Objetivo acadêmico
 
